@@ -66,7 +66,7 @@ async function showServInfo() {
         for (const playerInfo of servStats["players"]["sample"] ){
             newPlayer = playerTemp.content.cloneNode(true);
             newPlayer.querySelector("#player-name").innerHTML = playerInfo["name"]
-            newPlayer.querySelector("img").src = "https://mc-heads.net/avatar/" + playerInfo["name"]
+            newPlayer.querySelector("img").src = "https://api.mcheads.org/head/" + playerInfo["name"] + "/64"
             playerList.appendChild(newPlayer);
         }
 
