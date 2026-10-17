@@ -69,10 +69,10 @@ async function showServInfo() {
         cachedat.innerHTML = "Last checked: " + (new Date(servStats["cachedAt"])).toLocaleTimeString("en-US");
         
         playerList.innerHTML = "";
-        for (const playerInfo of servStats["players"]){
+        for (const playerName of servStats["players"]){
             newPlayer = playerTemp.content.cloneNode(true);
-            newPlayer.querySelector("#player-name").innerHTML = playerInfo["name"]
-            newPlayer.querySelector("img").src = "https://api.mcheads.org/head/" + playerInfo["name"] + "/64"
+            newPlayer.querySelector("#player-name").innerHTML = playerName
+            newPlayer.querySelector("img").src = "https://api.mcheads.org/head/" + playerName + "/64"
             playerList.appendChild(newPlayer);
         }
 
