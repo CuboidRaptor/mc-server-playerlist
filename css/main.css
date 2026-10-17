@@ -14,9 +14,7 @@ body {
     background: linear-gradient(90deg, #295270, #524175);
     display: flex;
     flex-direction: column;
-    justify-items: center;
     align-items: center;
-    width: 100vw;
     overflow-x: hidden;
     font-size: min(4vw, 1.5rem);
     min-height: 100vh;
@@ -24,16 +22,16 @@ body {
 
 .box {
     width: 95vw;
-    height: 95vh;
+    min-height: 90vh;
+    height: auto;
     border-radius: 1rem;
     background-color: rgba(0,0,0,0.2);
-    margin: auto 5px;
+    margin: auto 20px;
     padding: 20px;
 }
 
 .header{
     width: 85vw;
-    max-width: 85vw;
     margin: auto;
 }
 
@@ -45,10 +43,6 @@ body {
     align-items: center;
     font-family: Martius;
     font-size: min(4vw, 2rem);
-}
-
-.header h1{
-    text-size-adjust: auto;
 }
 
 .header h1#serv-ip{
