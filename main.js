@@ -66,7 +66,7 @@ async function showServInfo() {
             servUp.classList.remove("down");
         }
 
-        cachedat.innerHTML = "Cached at: " + (new Date(servStats["cachedAt"])).toLocaleTimeString("en-US");
+        cachedat.innerHTML = "Last checked: " + (new Date(servStats["cachedAt"])).toLocaleTimeString("en-US");
         
         playerList.innerHTML = "";
         for (const playerInfo of servStats["players"]){

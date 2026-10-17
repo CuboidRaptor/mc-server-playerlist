@@ -38,11 +38,18 @@ body {
 .header .title{
     display: flex;
     width: 100%;
-    max-width: 100%;
     justify-content: center;
     align-items: center;
     font-family: Martius;
     font-size: min(4vw, 2rem);
+}
+
+#cachedat {
+    font-size: min(3vw, 1.5rem);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .header h1#serv-ip{
