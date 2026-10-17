@@ -1,63 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="Live Stats For Minecraft Server">
-    <meta property="og:description" content="Simple web page to display active players on a Minecraft server">
-    <meta property="og:image" content="https://raw.githubusercontent.com/Qypol342/live-stats-mc/8a3d0d6faacafc6489c7c4a2e162d1acd3977c52/assets/preview.png">
-    <meta property="og:url" content="https://qypol342.github.io/live-stats-mc">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Live Stats For Minecraft Server">
-    <meta name="twitter:description" content="Simple web page to display active players on a Minecraft server">
-    <meta name="twitter:image" content="https://raw.githubusercontent.com/Qypol342/live-stats-mc/8a3d0d6faacafc6489c7c4a2e162d1acd3977c52/assets/preview.png">  
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="Live Stats For Minecraft Server">
+        <meta property="og:description" content="Simple web page to display active players on a Minecraft server">
+        <meta property="og:image" content="https://raw.githubusercontent.com/Qypol342/live-stats-mc/8a3d0d6faacafc6489c7c4a2e162d1acd3977c52/assets/preview.png">
+        <meta property="og:url" content="https://qypol342.github.io/live-stats-mc">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Live Stats For Minecraft Server">
+        <meta name="twitter:description" content="Simple web page to display active players on a Minecraft server">
+        <meta name="twitter:image" content="https://raw.githubusercontent.com/Qypol342/live-stats-mc/8a3d0d6faacafc6489c7c4a2e162d1acd3977c52/assets/preview.png">  
 
-    <title>Stats</title>
-    <link rel="stylesheet" href="style.css">
-    <link id="favicon" rel="shortcut icon" type="image/png" href="https://raw.githubusercontent.com/Qypol342/live-stats-mc/main/assets/icon.png" />
-</head>
+        <title>Stats</title>
+        <link rel="stylesheet" href="style.css">
+        <link id="favicon" rel="shortcut icon" type="image/png" href="https://raw.githubusercontent.com/Qypol342/live-stats-mc/main/assets/icon.png" />
+    </head>
 
 
-<body>
+    <body>
 
-    <div class="header">
-        <div class="title">
-            <h1 >Server: </h1>
-            <h1 id="serv-ip" class="type-writer" style="display:none;">Play.Tchoutchou.ovh</h1>
-            <input id="serv-in" type="text" style="display: none;">
-        </div>
-        <p id="status" class="down">...</p>
-        <button id="submit" style="display: none;" >Go</button>
-    </div>
-
-    <div class="section-player-list">
-        <h2>Player List :</h2>
-        <div class="player-list">
-            <p>loading...</p>
-
-        </div>
-        <template id="player">
-            <div class="player">
-            <img src="tmp.png"/>
-            <p id="player-name">....</p>
+        <div class="header">
+            <div class="title">
+                <h1 >Server: </h1>
+                <h1 id="serv-ip" class="type-writer" style="display:none;">Play.Tchoutchou.ovh</h1>
+                <input id="serv-in" type="text" style="display: none;">
             </div>
-        </template>
-    </div>
-
-    <div class="serv-icon">
-        <img id="serv-icon" src="https://raw.githubusercontent.com/Qypol342/live-stats-mc/main/assets/icon.png">
-    </div>
-
-
-    <div class="error-list" style="display: none;">
-        <div class="error">
-            <p> There is no server at this ip</p>
+            <p id="status" class="down">...</p>
+            <button id="submit" style="display: none;" >Go</button>
         </div>
-    </div>
-    <script src="main.js" defer></script>
-</body>
+
+        <div class="section-player-list">
+            <h2>Player List :</h2>
+            <div class="player-list">
+                <p>loading...</p>
+
+            </div>
+            <template id="player">
+                <div class="player">
+                <img src="tmp.png"/>
+                <p id="player-name">....</p>
+                </div>
+            </template>
+        </div>
+
+        <div class="serv-icon">
+            <img id="serv-icon" src="https://raw.githubusercontent.com/Qypol342/live-stats-mc/main/assets/icon.png">
+        </div>
+
+
+        <div class="error-list" style="display: none;">
+            <div class="error">
+                <p> There is no server at this ip</p>
+            </div>
+        </div>
+        <script src="main.js" defer></script>
+    </body>
 </html>
