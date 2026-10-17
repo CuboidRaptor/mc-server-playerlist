@@ -83,6 +83,8 @@ body {
     min-width: 0;
     text-wrap: balance;
     overflow-wrap: anywhere;
+    margin-left: 5vw;
+    margin-right: 5vw;
 }
 
 .player{
