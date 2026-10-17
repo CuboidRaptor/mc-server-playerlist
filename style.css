@@ -11,7 +11,7 @@
 body {
     font-family: Rijusans, Ubuntu, 'Helvetica Neue', sans-serif;
     color: white;
-    background: linear-gradient(90deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%); 
+    background: linear-gradient(90deg, #295270, #524175);
     display: flex;
     flex-direction: column;
     justify-items: center;
