@@ -1,5 +1,15 @@
+@font-face {
+    font-family: Martius;
+    src: url(./fonts/martius-font/Martius-LV9L4.ttf);
+}
+
+@font-face {
+    font-family: Rijusans;
+    src: url(./fonts/rijusans-font/Rijusans-gwAvR.ttf);
+}
+
 body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: Rijusans, Ubuntu, 'Helvetica Neue', sans-serif;
     color: white;
     background: linear-gradient(90deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%); 
     display: flex;
@@ -20,6 +30,7 @@ body {
     grid-template-columns: 1fr 5fr;
     max-width: 85vw;
     align-items: center;
+    font-family: Martius;
 }
 
 .header h1{
