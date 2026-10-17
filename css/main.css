@@ -22,7 +22,7 @@ body {
 
 .box {
     width: 95vw;
-    min-height: 90vh;
+    min-height: 95vh;
     height: auto;
     border-radius: 1rem;
     background-color: rgba(0,0,0,0.2);
