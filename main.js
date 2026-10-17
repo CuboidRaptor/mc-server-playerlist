@@ -9,8 +9,6 @@ const servIP = urlParams.get("ip");
 const error = urlParams.get("error");
 const servPort = urlParams.get("port") ? urlParams.get("port") : 25565;
 
-servIpTitle.innerHTML = servIP;
-
 console.log("url info", servIP, servPort)
 
 async function getStats() {
@@ -56,7 +54,9 @@ async function showServInfo() {
     console.log("serv", servStats["status"]);
 
     if (await servStats["status"] == "success"){
+        servIpTitle.textContent = servIP;
         servIpTitle.style.display = "block";
+        window.typeWriter(servIpTitle);
         servUp.innerHTML = "up: <span>" + servStats["online"] + "</span> players: " + servStats["players"]["now"] + "/" + servStats["players"]["max"];
         if (servStats["online"] == true){
             servUp.classList.remove("down");

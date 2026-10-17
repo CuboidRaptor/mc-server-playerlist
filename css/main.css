@@ -22,14 +22,16 @@ body {
 }
 
 .header{
-    width: fit-content;
+    width: 85vw;
+    max-width: 85vw;
     margin: auto;
 }
 
 .header .title{
     display: grid;
-    grid-template-columns: 1fr 5fr;
-    max-width: 85vw;
+    grid-template-columns: max-content minmax(0, 1fr);
+    width: 100%;
+    max-width: 100%;
     align-items: center;
     font-family: Martius;
     font-size: min(4vw, 2rem);
@@ -40,9 +42,11 @@ body {
 }
 
 .header h1#serv-ip{
-    /*width: 0%;
-    width: fit-content;*/
+    width: 100%;
     max-width: 100%;
+    min-width: 0;
+    white-space: normal;
+    overflow-wrap: anywhere;
     color: orange;
     margin-left: .3rem;
     
@@ -116,14 +120,9 @@ body {
     border-radius: 0 0 1rem 0;
 }
 
-.type-writer{
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .1em solid orange; /* The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
-    letter-spacing: .1em;
-    animation: 
-        typing 3.5s steps(33, end),
-        blink-caret .75s 3.5s step-end infinite; 
+.typed-text{
+    border-right: .1em solid orange;
+    animation: blink-caret .75s step-end infinite;
 }
 
 .error-list{
@@ -154,16 +153,6 @@ input{
     margin-left: 1rem;
 }
 
-
-
-
-/* The typing effect */
-@keyframes typing {
-    from { width: 0 }
-    to { width: 100%; max-width: fit-content; }
-}
-  
-  /* The typewriter cursor effect */
 @keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: orange; }
