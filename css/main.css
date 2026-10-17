@@ -1,11 +1,11 @@
 @font-face {
     font-family: Martius;
-    src: url(./fonts/martius-font/Martius-LV9L4.ttf);
+    src: url(/fonts/martius-font/Martius-LV9L4.ttf);
 }
 
 @font-face {
     font-family: Rijusans;
-    src: url(./fonts/rijusans-font/Rijusans-gwAvR.ttf);
+    src: url(/fonts/rijusans-font/Rijusans-gwAvR.ttf);
 }
 
 body {
