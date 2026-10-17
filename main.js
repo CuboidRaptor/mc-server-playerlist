@@ -54,34 +54,27 @@ async function showServInfo() {
     
     console.log("serv", servStats["status"]);
 
-    //if (await servStats["status"] == "success") {
-    if (true) {
-        if (!loaded) {
-            servIpTitle.textContent = servIP;
-            servIpTitle.style.display = "block";
-            window.typeWriter(servIpTitle);
-        }
-        servUp.innerHTML = "up: <span>" + servStats["online"] + "</span> players: " + servStats["onlinePlayers"] + "/" + servStats["maxPlayers"];
-        if (servStats["online"] == true){
-            servUp.classList.remove("down");
-        }
-
-        cachedat.innerHTML = "Last checked: " + (new Date(servStats["cachedAt"])).toLocaleTimeString("en-US");
-        
-        playerList.innerHTML = "";
-        for (const playerName of servStats["players"]){
-            newPlayer = playerTemp.content.cloneNode(true);
-            newPlayer.querySelector("#player-name").innerHTML = playerName
-            newPlayer.querySelector("img").src = "https://api.mcheads.org/head/" + playerName + "/64"
-            playerList.appendChild(newPlayer);
-        }
-
-        loaded = true;
+    if (!loaded) {
+        servIpTitle.textContent = servIP;
+        servIpTitle.style.display = "block";
+        window.typeWriter(servIpTitle);
     }
-    else if (servStats["status"] == "error") {
-        console.log("Redirect error");
-        document.location.href="?error";
+    servUp.innerHTML = "up: <span>" + servStats["online"] + "</span> players: " + servStats["onlinePlayers"] + "/" + servStats["maxPlayers"];
+    if (servStats["online"] == true){
+        servUp.classList.remove("down");
     }
+
+    cachedat.innerHTML = "Last checked: " + (new Date(servStats["cachedAt"])).toLocaleTimeString("en-US");
+    
+    playerList.innerHTML = "";
+    for (const playerName of servStats["players"]){
+        newPlayer = playerTemp.content.cloneNode(true);
+        newPlayer.querySelector("#player-name").innerHTML = playerName
+        newPlayer.querySelector("img").src = "https://api.mcheads.org/head/" + playerName + "/64"
+        playerList.appendChild(newPlayer);
+    }
+
+    loaded = true;
     
     if (servStats["protocol"] == -1) {
         let tempError = document.createElement("p");
