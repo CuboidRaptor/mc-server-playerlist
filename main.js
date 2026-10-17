@@ -57,11 +57,10 @@ async function showServInfo() {
 
     if (await servStats["status"] == "success"){
         servIpTitle.style.display = "block";
-        servUp.innerHTML = "up : <span>" + servStats["online"] + "</span>  now : " + servStats["players"]["now"] + "  max : " + servStats["players"]["max"] ;
+        servUp.innerHTML = "up : <span>" + servStats["online"] + "</span>  now : " + servStats["players"]["now"] + "  max : " + servStats["players"]["max"];
         if (servStats["online"] == true){
             servUp.classList.remove("down");
         }
-
         
         playerList.innerHTML = "";
         for (const playerInfo of servStats["players"]["sample"] ){
