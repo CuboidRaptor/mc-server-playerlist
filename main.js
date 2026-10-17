@@ -6,6 +6,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const servIP = urlParams.get("ip");
 const error = urlParams.get("error");
 const servPort = urlParams.get("port") ? urlParams.get("port") : 25565;
+const cachedat = document.querySelector("#cachedat")
 
 let loaded = false;
 
@@ -64,6 +65,8 @@ async function showServInfo() {
         if (servStats["online"] == true){
             servUp.classList.remove("down");
         }
+
+        cachedat.innerHTML = "Cached at: " + (new Date(servStats["cachedAt"])).toLocaleTimeString("en-US");
         
         playerList.innerHTML = "";
         for (const playerInfo of servStats["players"]){
