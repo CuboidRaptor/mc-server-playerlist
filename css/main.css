@@ -18,7 +18,17 @@ body {
     align-items: center;
     width: 100vw;
     overflow-x: hidden;
-    font-size: min(4vw, 1.5rem);  
+    font-size: min(4vw, 1.5rem);
+    min-height: 100vh;
+}
+
+.box {
+    width: 95vw;
+    height: 95vh;
+    border-radius: 1rem;
+    background-color: rgba(0,0,0,0.2);
+    margin: auto 5px;
+    padding: 20px;
 }
 
 .header{
