@@ -2,17 +2,17 @@ const servIpTitle = document.querySelector("#serv-ip");
 const servUp = document.querySelector("#status");
 const playerTemp = document.querySelector("template#player")
 const playerList = document.querySelector(".player-list")
-const favicon = document.querySelector("#favicon");
-const servIcon = document.querySelector("img#serv-icon");
 const urlParams = new URLSearchParams(window.location.search);
 const servIP = urlParams.get("ip");
 const error = urlParams.get("error");
 const servPort = urlParams.get("port") ? urlParams.get("port") : 25565;
 
+let loaded = false;
+
 console.log("url info", servIP, servPort)
 
 async function getStats() {
-    const servStats = await fetch(`https://mcapi.us/server/status?ip=${servIP}&port=${servPort}`);
+    const servStats = await fetch(`https://mc-api.io/server/JAVA/${servIP}`);
     const servStatsJson  = await servStats.json();
     return servStatsJson;
 }
@@ -53,32 +53,34 @@ async function showServInfo() {
     
     console.log("serv", servStats["status"]);
 
-    if (await servStats["status"] == "success"){
-        servIpTitle.textContent = servIP;
-        servIpTitle.style.display = "block";
-        window.typeWriter(servIpTitle);
-        servUp.innerHTML = "up: <span>" + servStats["online"] + "</span> players: " + servStats["players"]["now"] + "/" + servStats["players"]["max"];
+    //if (await servStats["status"] == "success") {
+    if (true) {
+        if (!loaded) {
+            servIpTitle.textContent = servIP;
+            servIpTitle.style.display = "block";
+            window.typeWriter(servIpTitle);
+        }
+        servUp.innerHTML = "up: <span>" + servStats["online"] + "</span> players: " + servStats["onlinePlayers"] + "/" + servStats["maxPlayers"];
         if (servStats["online"] == true){
             servUp.classList.remove("down");
         }
         
         playerList.innerHTML = "";
-        for (const playerInfo of servStats["players"]["sample"] ){
+        for (const playerInfo of servStats["players"]){
             newPlayer = playerTemp.content.cloneNode(true);
             newPlayer.querySelector("#player-name").innerHTML = playerInfo["name"]
             newPlayer.querySelector("img").src = "https://api.mcheads.org/head/" + playerInfo["name"] + "/64"
             playerList.appendChild(newPlayer);
         }
 
-        favicon.href = servStats["favicon"];
-        servIcon.src = servStats["favicon"];
+        loaded = true;
     }
     else if (servStats["status"] == "error") {
         console.log("Redirect error");
         document.location.href="?error";
     }
     
-    if (servStats["server"]["protocol"] == -1) {
+    if (servStats["protocol"] == -1) {
         let tempError = document.createElement("p");
         tempError.innerHTML = "😢: Unknown protocol";
         playerList.appendChild(tempError);
@@ -86,3 +88,4 @@ async function showServInfo() {
 }
 
 showServInfo();
+setInterval(showServInfo, 30000);
