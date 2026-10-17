@@ -36,8 +36,7 @@ body {
 }
 
 .header .title{
-    display: grid;
-    grid-template-columns: max-content max-content;
+    display: flex;
     width: 100%;
     max-width: 100%;
     justify-content: center;
@@ -47,9 +46,10 @@ body {
 }
 
 .header h1#serv-ip{
-    width: 100%;
+    width: auto;
     max-width: 100%;
     min-width: 0;
+    flex: 0 1 auto;
     white-space: normal;
     overflow-wrap: anywhere;
     color: orange;
